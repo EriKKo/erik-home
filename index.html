@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Erik Odenman</title>
+    <meta name="description" content="Erik Odenman — personal site and projects." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>Erik Odenman</h1>
+        <p class="tagline">Software engineer. Building things, mostly in the shipping &amp; returns space.</p>
+        <nav class="hero-links">
+          <a href="https://github.com/EriKKo" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:erik.odenman@ingrid.com">Email</a>
+        </nav>
+      </header>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I'm a software engineer who enjoys taking messy problems and turning them into systems that are
+          fun to work in. Most of my recent work has been around e-commerce returns, partner APIs, and the
+          plumbing that holds them together.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul class="projects">
+          <li class="project">
+            <h3>Multiplayer Minesweeper</h3>
+            <p>Real-time multiplayer Minesweeper. First to clear their board wins. Node.js + Socket.IO.</p>
+            <div class="project-links">
+              <a href="https://erik-minesweeper.fly.dev" class="project-link" target="_blank" rel="noopener">Play →</a>
+              <a href="https://github.com/EriKKo/Minesweeper" class="project-link" target="_blank" rel="noopener">Source →</a>
+            </div>
+          </li>
+          <li class="project">
+            <h3>Project two</h3>
+            <p>A short description of what this project does and why it was interesting to build.</p>
+            <a href="#" class="project-link">Read more →</a>
+          </li>
+          <li class="project">
+            <h3>Project three</h3>
+            <p>A short description of what this project does and why it was interesting to build.</p>
+            <a href="#" class="project-link">Read more →</a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>© <span id="year"></span> Erik Odenman</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
