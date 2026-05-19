@@ -100,18 +100,44 @@ section p a:hover {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 10px;
-  padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.project h3 {
+.project-thumb-link {
+  display: block;
+  line-height: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-thumb-link:hover .project-thumb {
+  transform: scale(1.04);
+}
+
+.project-body {
+  padding: 1rem 1.2rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-body h3 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;
 }
 
-.project p {
+.project-body p {
   color: var(--muted);
   margin: 0 0 0.8rem;
   font-size: 0.95rem;
