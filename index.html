@@ -15,7 +15,8 @@
         <nav class="hero-links">
           <a href="https://github.com/EriKKo" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/erik-odenman-0a864a6b/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:erik.odenman@gmail.com">erik.odenman@gmail.com</a>
+          <a id="email-link" href="mailto:erik.odenman@gmail.com" data-email="erik.odenman@gmail.com">erik.odenman@gmail.com</a>
+          <span id="email-copied" class="copy-toast" aria-hidden="true">Copied!</span>
         </nav>
       </header>
 
@@ -88,7 +89,7 @@
       </section>
 
       <section id="hobbies">
-        <h2>Other Hobbies</h2>
+        <h2>Music</h2>
         <ul class="projects">
           <li class="project">
             <a class="project-thumb-link" href="https://soundcloud.com/erik-odenman" target="_blank" rel="noopener" aria-label="Listen on SoundCloud">
@@ -112,6 +113,22 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        var link = document.getElementById("email-link");
+        var toast = document.getElementById("email-copied");
+        if (!link || !toast || !navigator.clipboard) return;
+        var hideTimer;
+        link.addEventListener("click", function () {
+          navigator.clipboard.writeText(link.dataset.email).then(function () {
+            toast.classList.add("is-visible");
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(function () {
+              toast.classList.remove("is-visible");
+            }, 1600);
+          }).catch(function () {});
+        });
+      })();
     </script>
   </body>
 </html>
